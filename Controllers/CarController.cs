@@ -17,23 +17,24 @@ namespace SuperCarBookingSystem.Controllers
 
         public IActionResult List()
         {
-            List<Car> cars = new List<Car>();
-            cars.Add(new Car
-            {
-                Id = "asadsdada",
-                Model = "Tesla Model 3",
-                Location = "Manchester City Centre",
-                IsBooked = true,
-            });
-            cars.Add(new Car
-            {
-                Id = "sakdajlkdaj",
-                Model = "Volkswagen Polo",
-                Location = "Manchester Airport",
-                IsBooked = false,
-            });
+            // Dummy data to bypass current driver issue
+            //List<Car> cars = new List<Car>();
+            //cars.Add(new Car
+            //{
+            //    Id = "asadsdada",
+            //    Model = "Tesla Model 3",
+            //    Location = "Manchester City Centre",
+            //    IsBooked = true,
+            //});
+            //cars.Add(new Car
+            //{
+            //    Id = "sakdajlkdaj",
+            //    Model = "Volkswagen Polo",
+            //    Location = "Manchester Airport",
+            //    IsBooked = false,
+            //});
 
-            return View(cars);
+            return View(_carService.GetAllCars());
         }
     }
 }
