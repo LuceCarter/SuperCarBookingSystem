@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Car>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Super Car Booking System</title>
+</head>
+<body>
+    <table class="table table-striped" aria-labelledby="carsTableLabel">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Location</th>
+                <th>Is Booked</th>
+                <th>Book</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+               <tr>
+                   <td>@car.Model</td>
+                   <td>@car.Location</td>
+                   <td>@car.IsBooked</td>
+                   <td>@if(!car.IsBooked)
+                        {
+                            <button>
+                                Book
+                            </button>
+                        }
+                    </td>
+               </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>
+
